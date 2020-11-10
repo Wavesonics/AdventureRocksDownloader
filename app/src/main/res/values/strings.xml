@@ -1,0 +1,12 @@
+<resources>
+	<string name="app_name">Adventure.Rocks Downloader</string>
+	<string name="activity_title">A.R Downloader</string>
+	<string name="sb_download_complete">Download Complete</string>
+	<string name="sb_download_failed">Download Failed</string>
+	<string name="sb_download_started">Downloading…</string>
+	<string name="sb_download_already_complete">Photo already downloaded</string>
+	<string name="sb_download_all_done">All photos downloaded</string>
+	<string name="download_all">Download All</string>
+	<string name="confirm_download_all_title">Download All?</string>
+	<string name="active_downloads">%1$d downloading</string>
+</resources>

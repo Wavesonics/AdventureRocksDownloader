@@ -1,0 +1,31 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    ext.kotlin_version = "1.4.10"
+    ext.koin_version = "2.1.6"
+    repositories {
+        google()
+        jcenter()
+        maven { url "https://kotlin.bintray.com/kotlinx" }
+        maven { url "https://oss.jfrog.org/libs-snapshot" }
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:4.1.1'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "org.koin:koin-gradle-plugin:$koin_version"
+        //classpath "org.jetbrains.kotlin:kotlin-serialization:$kotlin_version"
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        maven { url "https://kotlin.bintray.com/kotlinx/" }
+        maven { url "https://jitpack.io" }
+        maven { url "https://oss.jfrog.org/libs-snapshot" }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

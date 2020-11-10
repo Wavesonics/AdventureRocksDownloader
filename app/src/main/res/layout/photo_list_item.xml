@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:padding="@dimen/default_padding"
+	android:background="?android:attr/selectableItemBackground">
+
+	<TextView
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:id="@+id/photo_title"
+		tools:text="Photo Title"
+		app:layout_constraintTop_toTopOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintEnd_toStartOf="@+id/photo_preview"
+		android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+	<TextView
+		tools:text="date"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:id="@+id/photo_date"
+		app:layout_constraintTop_toBottomOf="@+id/photo_title"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintEnd_toStartOf="@+id/photo_preview" />
+
+	<TextView
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:id="@+id/photo_description"
+		tools:text="description"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintEnd_toStartOf="@+id/photo_preview"
+		app:layout_constraintTop_toBottomOf="@+id/photo_date"
+		android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+	<!--
+	<ImageView
+		android:id="@+id/photo_map"
+		android:layout_width="0dp"
+		android:layout_height="0dp"
+		tools:src="@drawable/ic_loading"
+		app:layout_constraintTop_toTopOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent" />
+	-->
+
+	<ImageView
+		android:id="@+id/photo_preview"
+		android:layout_width="96dp"
+		android:layout_height="96dp"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		tools:src="@drawable/ic_loading"/>
+
+	<ImageView
+		android:id="@+id/photo_downloaded"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		app:layout_constraintEnd_toEndOf="@+id/photo_preview"
+		app:layout_constraintBottom_toBottomOf="@+id/photo_preview"
+		android:src="@drawable/ic_downloaded"
+		app:tint="#4CAF50"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
