@@ -1,10 +1,12 @@
 package com.darkrockstudios.apps.adventurerocksdownloader.photos
 
 import android.Manifest
+import android.media.MediaScannerConnection
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.webkit.MimeTypeMap
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.viewModelScope
@@ -119,6 +121,9 @@ class PhotosFragment: Fragment(), DownloadFileListener
 
 	private fun downloadAll()
 	{
+		// Scan all downloaded photos
+		//photosAdapter.adapterItems.map { it.photo }.filter { it.isDownloaded() }.forEach { scanPhoto(it.file().absolutePath) }
+
 		val toDownload = photosAdapter.adapterItems
 				.map { it.photo }
 				.filter { !it.isDownloaded() }
@@ -182,11 +187,22 @@ class PhotosFragment: Fragment(), DownloadFileListener
 		}
 		else
 		{
+			scanPhoto(result.path)
 			view?.let { v -> Snackbar.make(v, R.string.sb_download_complete, Snackbar.LENGTH_SHORT).show() }
 		}
 
 		updateDownloadProgress()
 		adapter.notifyAdapterDataSetChanged()
+	}
+
+	private fun scanPhoto(path: String)
+	{
+		context?.let { ctx ->
+			val mime = MimeTypeMap.getFileExtensionFromUrl(path)
+			MediaScannerConnection.scanFile(ctx, arrayOf(path), arrayOf(mime)) { path, _ ->
+				d("Scan complete for: $path")
+			}
+		}
 	}
 
 	override fun onProgress(data: DownloadData, progress: Float)

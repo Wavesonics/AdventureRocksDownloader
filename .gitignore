@@ -16,3 +16,4 @@ local.properties
 /.idea/jarRepositories.xml
 /.idea/gradle.xml
 /.idea/.name
+/app/release/
