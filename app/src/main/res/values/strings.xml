@@ -9,4 +9,20 @@
 	<string name="download_all">Download All</string>
 	<string name="confirm_download_all_title">Download All?</string>
 	<string name="active_downloads">%1$d downloading</string>
+
+	<string name="intro_00_title">Adventure.Rocks</string>
+	<string name="intro_00_description">Welcome to the Adventure.Rocks downloader!</string>
+
+	<string name="intro_01_title">Immersive Photos</string>
+	<string name="intro_01_description">We climb a lot of mountains, and some years ago we started taking mono-scopic 360 photos on these climbs.\n\nWe wanted a way to download these photos easily on friends devices so they could be viewed in VR!</string>
+
+	<string name="intro_02_title">Download</string>
+	<string name="intro_02_description">This app allows you to download any or all of the photos, and they will show up automatically in your Photo Gallery.</string>
+
+	<string name="intro_03_title">View</string>
+	<string name="intro_03_description">Once you have downloaded the photos, you can view them in the Oculus TV app. Go to "Your Media" in the TV app, and then you should see the downloaded photos.</string>
+
+	<string name="intro_04_title">Thanks it!</string>
+	<string name="intro_04_description">Thanks for checking out our photos, we hope you enjoy them!</string>
+	<string name="website">https://wethinkadventure.rocks/</string>
 </resources>

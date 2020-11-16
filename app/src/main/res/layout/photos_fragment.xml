@@ -8,15 +8,26 @@
 	android:id="@+id/frameLayout2">
 
 	<TextView
+		android:text="@string/website"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:id="@+id/website_view"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+		android:autoLink="web" />
+
+	<TextView
 		tools:text="0 Downloads"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:id="@+id/num_downloads_view"
 		app:layout_constraintEnd_toStartOf="@+id/download_progress_bar"
 		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toTopOf="parent"
 		app:layout_constraintBottom_toBottomOf="@+id/download_progress_bar"
-		android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+		android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+		app:layout_constraintTop_toBottomOf="@+id/website_view" />
 
 	<ProgressBar
 		style="?android:attr/progressBarStyle"
@@ -24,8 +35,16 @@
 		android:layout_height="wrap_content"
 		android:id="@+id/download_progress_bar"
 		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintTop_toTopOf="parent"
-		android:padding="@dimen/default_padding" />
+		android:padding="@dimen/default_padding"
+		app:layout_constraintTop_toBottomOf="@+id/website_view" />
+
+	<View
+		android:layout_width="match_parent"
+		android:layout_height="1dp"
+		android:background="#555555"
+		app:layout_constraintBottom_toTopOf="@+id/photos_list"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintEnd_toEndOf="parent" />
 
 	<androidx.recyclerview.widget.RecyclerView
 		android:layout_width="0dp"
